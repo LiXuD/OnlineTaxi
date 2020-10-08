@@ -1,0 +1,6 @@
+# Project exclude paths
+/api-passenger/target/
+/cloud-eureka/target/
+/internal-common/target/
+/service-sms/target/
+/service-verification-code/target/

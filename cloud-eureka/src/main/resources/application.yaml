@@ -1,0 +1,44 @@
+spring:
+  application:
+    name: ekserver
+eureka:
+  client:
+    service-url:
+      defaultZone: http://eureka1.com:7901/eureka/,http://eureka2.com:7902/eureka/,http://eureka3.com:7903/eureka/
+  server:
+    #自我保护
+    enable-self-preservation: false
+    #关闭从ReadOnlyMap读注册表
+    use-read-only-response-cache: false
+    #剔除服务间隔时间
+    eviction-interval-timer-in-ms: 1000
+    #ReadWriteMap和ReadOnlyMap同步间隔
+    response-cache-update-interval-ms: 1000
+
+---
+server:
+  port: 7901
+spring:
+  profiles: 7901
+eureka:
+  instance:
+    hostname: eureka1.com
+
+---
+server:
+  port: 7902
+spring:
+  profiles: 7902
+eureka:
+  instance:
+    hostname: eureka2.com
+
+---
+server:
+  port: 7903
+spring:
+  profiles: 7903
+eureka:
+  instance:
+    hostname: eureka3.com
+
